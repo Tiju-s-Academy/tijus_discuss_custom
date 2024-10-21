@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    
+    <record id="discuss_channel_view_form_inherit" model="ir.ui.view">
+        <field name="name">discuss.channel.form.inherit</field>
+        <field name="model">discuss.channel</field>
+        <field name="inherit_id" ref="mail.discuss_channel_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='channel_member_ids']//field[@name='partner_id']" position="attributes">
+                <attribute name="domain">[('has_user','=',True)]</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
